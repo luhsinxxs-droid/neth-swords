@@ -1,0 +1,22 @@
+name: DiaSwords
+version: '1.0.0'
+main: com.diasmp.diaswords.DiaSwords
+api-version: '1.21'
+author: DiaSMP
+description: Custom ability swords for DiaSMP FFA server.
+
+commands:
+  diaswords:
+    description: Give players custom ability swords.
+    usage: /diaswords give <player> <sword> | /diaswords list | /diaswords reload
+    aliases: [ds, dsword]
+    permission: diaswords.admin
+    permission-message: You do not have permission to use this command.
+
+permissions:
+  diaswords.admin:
+    description: Allows giving custom swords and reloading config.
+    default: op
+  diaswords.use:
+    description: Allows using sword abilities.
+    default: true

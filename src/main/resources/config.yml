@@ -1,0 +1,66 @@
+# =========================================================
+#  DiaSwords Configuration
+#  Tune every sword ability here. Use /diaswords reload
+#  after editing to apply changes without restarting.
+# =========================================================
+
+dash-sword:
+  display-name: "&b&lDash Sword"
+  # Trigger: right-click while holding the sword
+  cooldown-seconds: 6
+  dash-strength: 1.8          # forward velocity multiplier
+  dash-upward-boost: 0.15     # small upward lift so you don't catch on terrain
+  particle-trail: true
+  fall-damage-immunity-seconds: 1.0   # prevents fall damage right after dashing
+
+lightning-sword:
+  display-name: "&e&lLightning Sword"
+  # Trigger: passive, on melee hit
+  proc-chance: 0.10           # 10% chance per hit
+  bonus-damage: 4.0           # extra damage dealt on top of normal hit when it procs
+  visual-strike: true         # spawns lightning effect visual (set false for damage-only, no skybolt graphic)
+  damage-fire: false          # if true, target also catches fire briefly
+
+vampire-sword:
+  display-name: "&4&lVampire Sword"
+  # Trigger: passive, on melee hit
+  heal-percent: 0.35          # heals the attacker for 35% of damage dealt
+  max-heal-per-hit: 3.0       # cap on health restored per hit (in half-hearts... see note)
+  particle-drain: true
+
+frost-sword:
+  display-name: "&3&lFrost Sword"
+  # Trigger: right-click while holding the sword
+  cooldown-seconds: 12
+  radius: 4.0                 # blocks around the user affected
+  freeze-duration-seconds: 3
+  slowness-amplifier: 3       # Slowness level (0 = Slowness I)
+  mining-fatigue-amplifier: 2
+  affect-self: false
+  particle-burst: true
+
+vortex-sword:
+  display-name: "&5&lVortex Sword"
+  # Trigger: right-click while holding the sword
+  cooldown-seconds: 10
+  radius: 6.0                 # blocks around the user to pull enemies from
+  pull-strength: 0.9
+  affect-self: false
+  particle-spiral: true
+
+explosive-sword:
+  display-name: "&c&lExplosive Sword"
+  # Trigger: right-click while holding the sword, launches a fireball
+  cooldown-seconds: 8
+  fireball-speed: 1.4
+  explosion-power: 1.6        # yield, vanilla fireball default is ~1.0 (this is slightly stronger)
+  set-fire: false             # if true, explosion can ignite blocks/entities
+  break-blocks: false         # if false, explosion only damages/knocks back entities, no terrain destruction
+  shooter-immune: true        # if true, the player who fired it cannot be hurt by their own explosion
+
+general:
+  # Cooldown message shown to players when an ability is still cooling down
+  cooldown-message: "&c{sword} is on cooldown: {seconds}s remaining"
+  ability-used-sound: true
+  prevent-sword-drop: false   # if true, custom swords cannot be dropped on the ground
+  prevent-sword-loss-on-death: false  # if true, custom swords are kept on death instead of dropping as loot
